@@ -1,3 +1,4 @@
+//Login
 /*const user = "usuario";
 const pass_usario = "contraseña1234";
 
@@ -36,6 +37,7 @@ function validarDatos(usuario, pass) {
   return mensaje;
 }*/
 
+// Array
 let data = ["Manzana", 1, 5, "Banana", true, 10, 5, "Naranja", 2];
 
 let no_number = new Array();
@@ -52,7 +54,7 @@ for (let i = 0; i < data.length; i++) {
 console.log("El contenido del arreglo es:" + no_number);
 console.log("El contenido del valor numerico es:" + sum);
 
-class Fruta {
+/*class Fruta {
   constructor(nombre, precio) {
     this.nombre = nombre.toUpperCase();
     this.precio = parseFloat(precio);
@@ -61,12 +63,82 @@ class Fruta {
   sumaIva() {
     this.precio = this.precio * 1.21;
   }
+}*/
+
+class Fruta {
+  constructor(id, precio, kg, producto) {
+    this.id = id;
+    this.producto = producto;
+    this.precio = precio;
+    this.kilogramos = kg;
+  }
+
+  mostrar_catalogo_completo() {
+    return "#" + this.id + " - " + this.producto + " $ " + this.precio;
+  }
+
+  getPrecio() {
+    return this.precio;
+  }
+
+  setPrecio(nuevo_precio) {
+    this.precio = nuevo_precio;
+  }
+
+  gitId() {
+    return this.id;
+  }
+
+  setId(nuevo_id) {
+    this.id = nuevo_id;
+  }
+
+  getKilogramos() {
+    return this.kg;
+  }
+
+  setKilogramos(nuevo_kg) {
+    this.kg = nuevo_kg;
+  }
 }
 
-/*class Fruta = [];
-Fruta.push(new Fruta("Manzana","2000"))
-Fruta.push(new Fruta("Banana", "3000"))
-Fruta.push(new Fruta ("Naranja", "5000"))
+const arreglo_fruta = new Array();
+arreglo_fruta.push(new Fruta(1, 2000, "2kg", "Banana"));
+arreglo_fruta.push(new Fruta(2, 1500, "1kg", "Manzana"));
+arreglo_fruta.push(new Fruta(3, 5000, "3kg", "Uva"));
+arreglo_fruta.push(new Fruta(4, 3500, "4kg", "Naranja"));
 
-for (const Fruta of Fruta)
-  Fruta.sumaIva();*/
+let respuesta = true;
+
+while (respuesta != "4" && respuesta) {
+  respuesta = mostrarMenu();
+}
+
+function mostrarMenu() {
+  let respuesta = prompt(
+    "Eliga una opcion \n 1)Productos \n2)nuevo precio \n3)ordenar productos \n4)salir"
+  );
+
+  if (respuesta == "1") {
+    alert("Nuestros productos son: " + mostrar_stock());
+  }
+
+  return respuesta;
+}
+
+function mostrar_stock() {}
+
+function mostrar_stock() {
+  let stock = "";
+
+  for (let i = 0; i < arreglo_fruta.length; i++) {
+    stock += arreglo_fruta[i].mostrar_catalogo_completo();
+  }
+  return stock;
+}
+
+//Array join
+
+/*let Producto = ['Arroz', 'Jabon', 'Desodorante'];
+let listaProducto = Producto.join(' ');
+console.log(listaProducto); */
