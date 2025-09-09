@@ -1,44 +1,3 @@
-//Login
-
-/*const user = "usuario";
-const pass_usario = "contraseña1234";
-
-solicitarDatos();
-
-function solicitarDatos() {
-  let usuario = prompt("Ingresar usuario");
-  let pas = prompt("ingresar contraseña");
-
-  let mensaje = validarDatos(usuario, pass);
-
-  if (mensaje == "") {
-    
-  } else {
-    console.log(mensaje);
-    alert(mensaje);
-  }
-}
-
-
-function validarDatos(usuario, pass) {
-  let mensaje = "";
-
-  if (!usuario) {
-    mensaje = "Ingrese un usuario .";
-  }
-
-  if (!pass) {
-    mensaje += "\n Ingrese una contraseña valida .";
-  }
-
-  if (usuario != user || pass != pass_usario) {
-    mensaje += "\nUsuario o contraseña incorrecto";
-  }
-
-  return mensaje;
-}*/
-
-// Array
 let data = ["Manzana", 1, 5, "Banana", true, 10, 5, "Naranja", 2];
 
 let no_number = new Array();
@@ -54,17 +13,6 @@ for (let i = 0; i < data.length; i++) {
 
 console.log("El contenido del arreglo es:" + no_number);
 console.log("El contenido del valor numerico es:" + sum);
-
-/*class Fruta {
-  constructor(nombre, precio) {
-    this.nombre = nombre.toUpperCase();
-    this.precio = parseFloat(precio);
-    this.vendido = false;
-  }
-  sumaIva() {
-    this.precio = this.precio * 1.21;
-  }
-}*/
 
 class Fruta {
   constructor(id, precio, kg, producto) {
@@ -127,8 +75,6 @@ function mostrarMenu() {
   return respuesta;
 }
 
-function mostrar_stock() {}
-
 function mostrar_stock() {
   let stock = "";
 
@@ -137,9 +83,3 @@ function mostrar_stock() {
   }
   return stock;
 }
-
-//Array join
-
-/*let Producto = ['Arroz', 'Jabon', 'Desodorante'];
-let listaProducto = Producto.join(' ');
-console.log(listaProducto); */
