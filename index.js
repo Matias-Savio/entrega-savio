@@ -1,28 +1,28 @@
 const productos = [
   {
     nombre: "Auriculares Bluetooth Pokemon",
-    precio: 49.999,
+    precio: 40000.0,
     imagen:
       "https://res.cloudinary.com/duvzoazz3/image/upload/v1752366019/1366_2000_hjircp.jpg",
   },
 
   {
     nombre: "Pc Intel Core i5 10400-H510-8Gb-Ssd 960GB-KIT",
-    precio: 850.9,
+    precio: 800000.0,
     imagen:
       "https://res.cloudinary.com/duvzoazz3/image/upload/v1752365960/D_NQ_NP_837002-MLA81819412766_012025-O_inozsl.webp",
   },
 
   {
     nombre: "Funda Personalizada Mountain",
-    precio: 3.0,
+    precio: 300.0,
     imagen:
       "https://res.cloudinary.com/duvzoazz3/image/upload/v1752365790/iphone-10_-1024-x-10241-54822b3337921767db16673096333111-1024-1024_jgjv53.jpg",
   },
 
   {
     nombre: "Funda Personalizada Messi",
-    precio: 7.0,
+    precio: 700.0,
     imagen:
       "https://res.cloudinary.com/duvzoazz3/image/upload/v1752365680/Carcasa-Celular-Para-Sublimar-removebg-1_ixfm0t.png",
   },
