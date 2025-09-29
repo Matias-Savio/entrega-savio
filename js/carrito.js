@@ -1,55 +1,41 @@
-function agregarAlCarrito(producto) {
-  const memoria = JSON.parse(localStorage.getItem("notebook"));
+const pintarCarrito = () => {
+  modalContainer.innerHTML = "";
+  modalContainer.style.display = "flex";
+  const modalHeader = document.createElement("div");
+  modalHeader.className = "modal-header";
+  modalHeader.innerHTML = `
+   <h1 class="modal-header-title">Carrito</h1>
+  `;
+  modalContainer.append(modalHeader);
 
-  let cuenta = 0;
-  if (!memoria) {
-    const nuevoProducto = getNuevoProductoParaMemoria(producto);
-    localStorage.setItem("notebook", JSON.stringify([nuevoProducto]));
-    cuenta = 1;
-  } else {
-    const indiceProducto = memoria.findIndex(
-      (notebook) => notebook.id === producto.id
-    );
+  const modalbutton = document.createElement("h1");
+  modalbutton.innerText = "x";
+  modalbutton.className = "modal-header-button";
 
-    const nuevaMemoria = memoria;
-    if (indiceProducto === -1) {
-      const nuevaMemoria = memoria;
-      nuevaMemoria.push(getNuevoProductoParaMemoria(producto));
-      cuenta = 1;
-    } else {
-      nuevaMemoria[indiceProducto].cantidad++;
-      cuenta = nuevaMemoria[indiceProducto].cantidad;
-    }
-    localStorage.setItem("notebook", JSON.stringify(nuevaMemoria));
-    return cuenta;
-  }
-  actualizarNumeroCarrito();
-}
+  modalbutton.addEventListener("click", () => {
+    modalContainer.style.display = "none";
+  });
 
-function restarAlCarrito(producto) {
-  const memoria = JSON.parse(localStorage.getItem("notebook"));
-  const indiceProducto = memoria.findIndex(
-    (notebook) => notebook.id === producto.id
-  );
-  if (memoria[indiceProducto].cantidad === 1) {
-    memoria.splice(indiceProducto, 1);
-    localStorage.setItem("notebook", JSON.stringify(memoria));
-  } else {
-    memoria[indiceProducto].cantidad--;
-  }
-}
+  modalHeader.append(modalbutton);
 
-function getNuevoProductoParaMemoria(producto) {
-  const nuevoProducto = producto;
-  nuevoProducto.cantida = 1;
-  return nuevoProducto;
-}
+  carrito.forEach((product) => {
+    let carritoContent = document.createElement("div");
+    carritoContent.className = "modal-content";
+    carritoContent.innerHTML = `
+     <img src="${product.img}">
+     <h3>${product.nombre}</h3>
+     <p>$${product.precio}</p>
+    `;
 
-const cuentaCarritoElement = document.getElementById("cuenta-carrito");
-function actualizarNumeroCarrito() {
-  const memoria = JSON.parse(localStorage.getItem("notebook"));
-  const cuenta = memoria.reduce((acum, current) => acum + current.cantidad, 0);
-  cuentaCarritoElement.innerText = cuenta;
-}
+    modalContainer.append(carritoContent);
+  });
 
-actualizarNumeroCarrito();
+  const total = carrito.reduce((acc, el) => acc + el.precio, 0);
+
+  const totalBuying = document.createElement("div");
+  totalBuying.className = "total-content";
+  totalBuying.innerHTML = `total a pagar: $${total} `;
+  modalContainer.append(totalBuying);
+};
+
+verCarrito.addEventListener("click", pintarCarrito);

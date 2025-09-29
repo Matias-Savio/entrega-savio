@@ -8,20 +8,24 @@
     <title>Sengunda entrega</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="./pages/carrito.html"
-          ><img
-            src="https://res.cloudinary.com/duvzoazz3/image/upload/v1759031894/107831_izux7h.png"
-            alt="Carrito"
-          /><span id="cuenta-carrito">0</span></a
-        >
+    <div class="nav-container">
+      <nav class="navbar">
+        <h1 class="navbar-logo">Logo</h1>
+        <h1 class="ver-carrito" id="verCarrito">🛒</h1>
       </nav>
-    </header>
-    <main>
-      <a href="./pages/carrito.html"></a>
-      <section id="productos-container"></section>
-    </main>
+    </div>
+
+    <div class="banner">
+      <div class="banner-container">
+        <h1>Computadoras</h1>
+        <p>Sengunda Entrega</p>
+      </div>
+    </div>
+
+    <div id="shopContent" class="shop-content"></div>
+
+    <div id="modal-container" class="modal-container"></div>
+    <script src="./js/product.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/carrito.js"></script>
   </body>
