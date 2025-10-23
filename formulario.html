@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../styles.css" />
+    <title>Formulario</title>
+  </head>
+  <body>
+    <h1>Finalizar compra</h1>
+    <form id="form-compra">
+      <div class="botones-formulario">
+        <button type="button" id="btn-cancelar" class="btn-cancelar">
+          Cancelar
+        </button>
+        <button type="button" id="btn-volver" class="btn-volver">
+          Seguir comprando
+        </button>
+        <button type="submit" id="btn-enviar" class="btn-enviar">
+          Enviar pedido
+        </button>
+      </div>
+    </form>
+
+    <h2>Resumen de tu compra</h2>
+    <div id="resumen-carrito" class="resumen-carrito"></div>
+
+    <div id="mensaje" class="mensaje-exito"></div>
+    <script src="./../js/formulario.js"></script>
+  </body>
+</html>

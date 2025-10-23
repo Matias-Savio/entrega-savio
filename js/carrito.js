@@ -64,6 +64,34 @@ const pintarCarrito = () => {
   totalBuying.className = "total-content";
   totalBuying.innerHTML = `total a pagar: $${total} `;
   modalContainer.append(totalBuying);
+
+  // Botones de compra y vaciar carrito
+  const botonesContainer = document.createElement("div");
+  botonesContainer.className = "botones-carrito";
+
+  const vaciarBtn = document.createElement("button");
+  vaciarBtn.innerText = "Vaciar carrito";
+  vaciarBtn.className = "btn-vaciar";
+
+  const finalizarBtn = document.createElement("button");
+  finalizarBtn.innerText = "Finalizar compra";
+  finalizarBtn.className = "btn-finalizar";
+
+  botonesContainer.append(vaciarBtn, finalizarBtn);
+  modalContainer.append(botonesContainer);
+
+  // vaciar carrito
+  vaciarBtn.addEventListener("click", () => {
+    carrito = [];
+    localStorage.removeItem("carrito");
+    carritoCounter();
+    pintarCarrito();
+  });
+
+  // Finalizar compra
+  finalizarBtn.addEventListener("click", () => {
+    location.href = "formulario.html";
+  });
 };
 
 verCarrito.addEventListener("click", pintarCarrito);
