@@ -5,7 +5,15 @@ const cantidadCarrito = document.getElementById("cantidadCarrito");
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-productos.forEach((product) => {
+const getProducts = async () => {
+  const response = await fetch("data.json");
+  const data = await response.json();
+  console.log(data);
+};
+
+getProducts();
+
+data.forEach((product) => {
   let content = document.createElement("div");
   content.className = "card";
   content.innerHTML = `
