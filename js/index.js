@@ -49,6 +49,15 @@ const getProducts = async () => {
 
       carritoCounter();
       saveLocal();
+      //Notificacion de producto agregado
+      Swal.fire({
+        title: "¡Producto agregado con exito!",
+        text: `${product.nombre} fue añadido al carrito.`,
+        icon: "success",
+        confirmButtonText: "OK",
+        timer: 1500,
+        showConfirmButton: false,
+      });
     });
   });
 };
